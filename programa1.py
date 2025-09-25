@@ -1,5 +1,10 @@
-def main():
-    print("¡Hola desde Python en Railway con GitHub!")
+from flask import Flask
+
+app = Flask(__name__)
+
+@app.route("/")
+def home():
+    return "¡Hola, tu app de Python está corriendo en Railway!"
 
 if __name__ == "__main__":
-    main()
+    app.run(host="0.0.0.0", port=5000)
